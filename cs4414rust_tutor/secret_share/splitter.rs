@@ -45,10 +45,10 @@ fn xor(a: &Vec<u8>, b: &Vec<u8>) -> mut Vec<u8> {
 }
 
 fn split(msg_bytes: &[u8], mut share1: File, mut share2: File) {
-    let mut random_bytes: ~[u8] = ~[];
+    let mut random_bytes: &[u8] = &[];
     // This is not cryptographically strong randomness! 
     // (For entertainment purposes only.)
-    for _ in range(0, msg_bytes.len()) {
+    for _ in 0..msg_bytes.len() {
       let random_byte = random(); // random_byte is a Vec
       random_bytes.push(random_byte);
     }
